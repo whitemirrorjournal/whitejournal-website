@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>White Mirror – Pre-Order</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --font: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      --bg: #f5f5f7;
+      --bg: #ffffff;
       --text: #1d1d1f;
       --subtle: #6e6e73;
       --accent: #0071e3;
@@ -24,95 +24,67 @@
       font-family: var(--font);
     }
 
-    html, body {
+    body {
       background-color: var(--bg);
       color: var(--text);
+      padding: 0 24px;
       scroll-behavior: smooth;
-      overflow-x: hidden;
     }
 
-    /* Sticky Hero Section */
-    .hero {
-      position: relative;
-      height: 100vh;
-      background-image: url('https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_large_2x.jpg'); /* Replace with your own */
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-    }
-
-    .hero h1 {
-      font-size: 64px;
-      font-weight: 600;
-      margin-bottom: 10px;
-      backdrop-filter: blur(4px);
-    }
-
-    .hero p {
-      font-size: 24px;
-      color: #e0e0e0;
-      max-width: 600px;
+    .container {
+      max-width: 800px;
       margin: 0 auto;
-      backdrop-filter: blur(4px);
-    }
-
-    .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      font-size: 14px;
-      color: #ccc;
-      animation: bounce 2s infinite;
-    }
-
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(8px); }
-    }
-
-    .reveal {
+      padding: 120px 0 60px;
+      text-align: center;
       opacity: 0;
       transform: translateY(40px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      animation: fadeInUp 1.4s ease forwards;
     }
 
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    main {
-      max-width: 600px;
-      margin: 80px auto;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-      padding: 40px 30px;
+    h1 {
+      font-size: 56px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    p.subtext {
+      font-size: 20px;
+      color: var(--subtle);
+      max-width: 500px;
+      margin: 0 auto 80px;
+      line-height: 1.6;
     }
 
     form {
       display: flex;
       flex-direction: column;
+      gap: 24px;
+      text-align: left;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     label {
-      font-size: 16px;
-      margin-bottom: 6px;
+      font-size: 15px;
       font-weight: 500;
+      color: var(--text);
     }
 
     input {
-      padding: 14px;
-      margin-bottom: 24px;
+      width: 100%;
+      padding: 16px;
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 14px;
       font-size: 16px;
-      background: #fff;
+      background-color: white;
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
@@ -131,48 +103,40 @@
       border: none;
       border-radius: 14px;
       cursor: pointer;
-      transition: background 0.3s ease, transform 0.2s ease;
+      transition: background 0.3s ease;
     }
 
     button:hover {
       background: #005bb5;
-      transform: scale(1.03);
     }
 
     footer {
       text-align: center;
-      font-size: 14px;
+      font-size: 13px;
       color: var(--subtle);
-      margin: 80px 0 30px;
+      margin-top: 100px;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 44px;
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 42px;
       }
 
-      .hero p {
-        font-size: 18px;
+      p.subtext {
+        font-size: 17px;
       }
 
-      main {
-        margin: 40px 20px;
-        padding: 30px 20px;
+      .container {
+        padding-top: 80px;
       }
     }
   </style>
 </head>
 <body>
-
-  <!-- Sticky Hero -->
-  <section class="hero">
+  <div class="container">
     <h1>White Mirror</h1>
-    <p>Journal your way into clarity, healing, and real self-connection.</p>
-    <div class="scroll-down">Scroll ↓</div>
-  </section>
+    <p class="subtext">A journal designed for clarity, healing, and human connection.</p>
 
-  <!-- Pre-Order Form -->
-  <main class="reveal">
     <form>
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Jane Appleseed" required />
@@ -185,28 +149,8 @@
 
       <button type="submit">Pre-Order Now</button>
     </form>
-  </main>
+  </div>
 
-  <footer class="reveal">
-    &copy; 2025 White Mirror. Inspired by Apple. Built for change.
-  </footer>
-
-  <!-- Scroll Animation Script -->
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    reveals.forEach(reveal => {
-      observer.observe(reveal);
-    });
-  </script>
+  <footer>&copy; 2025 White Mirror. Designed with intention.</footer>
 </body>
 </html>
