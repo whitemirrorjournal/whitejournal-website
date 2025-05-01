@@ -3,96 +3,134 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>White Mirror</title>
+  <title>White Mirror – Pre-Order</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --font: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --bg: #f5f5f7;
+      --text: #1d1d1f;
+      --subtle: #6e6e73;
+      --accent: #0071e3;
+      --border: #d2d2d7;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Helvetica Neue', sans-serif;
+      font-family: var(--font);
     }
 
     body {
-      background-color: #f9f9f9;
-      color: #333;
-      line-height: 1.6;
+      background-color: var(--bg);
+      color: var(--text);
     }
 
     header {
-      background-color: #ffffff;
-      padding: 20px 40px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 60px 20px 20px;
     }
 
     header h1 {
-      font-size: 28px;
-      color: #111;
-      letter-spacing: 1px;
+      font-size: 48px;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      margin-right: 20px;
-      text-decoration: none;
-      color: #666;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      color: #000;
+    header p {
+      font-size: 20px;
+      color: var(--subtle);
+      max-width: 500px;
+      margin: 0 auto;
     }
 
     main {
-      padding: 60px 40px;
-      text-align: center;
-    }
-
-    main h2 {
-      font-size: 36px;
-      margin-bottom: 20px;
-    }
-
-    main p {
       max-width: 600px;
-      margin: 0 auto;
-      font-size: 18px;
-      color: #555;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      padding: 40px 30px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-size: 16px;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    input {
+      padding: 14px;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 16px;
+      background: #fff;
+      transition: border-color 0.2s ease;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    button {
+      background: var(--accent);
+      color: white;
+      padding: 16px;
+      font-size: 17px;
+      font-weight: 500;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #005bb5;
     }
 
     footer {
-      background-color: #f0f0f0;
       text-align: center;
-      padding: 20px;
-      margin-top: 60px;
       font-size: 14px;
-      color: #777;
+      color: var(--subtle);
+      margin: 80px 0 30px;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>White Mirror</h1>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Journal</a>
-      <a href="#">Contact</a>
-    </nav>
+    <p>Pre-order the journal designed for healing, reflection, and real inner growth.</p>
   </header>
 
   <main>
-    <h2>Reflect. Heal. Grow.</h2>
-    <p>
-      Welcome to White Mirror — a space designed to guide your journey toward self-awareness,
-      mental clarity, and emotional well-being. Begin your transformation today.
-    </p>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Jane Appleseed" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+
+      <label for="phone">Phone Number (optional)</label>
+      <input type="tel" id="phone" name="phone" placeholder="+1 123 456 7890" />
+
+      <button type="submit">Pre-Order Now</button>
+    </form>
   </main>
 
   <footer>
-    &copy; 2025 White Mirror. All rights reserved.
+    &copy; 2025 White Mirror. Inspired by Apple. Built for change.
   </footer>
+
 </body>
 </html>
