@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>White Mirror – Pre-Order</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,32 +24,71 @@
       font-family: var(--font);
     }
 
-    body {
+    html, body {
       background-color: var(--bg);
       color: var(--text);
+      scroll-behavior: smooth;
+      overflow-x: hidden;
     }
 
-    header {
+    /* Sticky Hero Section */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background-image: url('https://www.apple.com/v/home/bf/images/heroes/iphone-15-pro/hero_iphone15pro__i70z9oz3hj2i_large_2x.jpg'); /* Replace with your own */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 60px 20px 20px;
+      color: white;
     }
 
-    header h1 {
-      font-size: 48px;
+    .hero h1 {
+      font-size: 64px;
       font-weight: 600;
       margin-bottom: 10px;
+      backdrop-filter: blur(4px);
     }
 
-    header p {
-      font-size: 20px;
-      color: var(--subtle);
-      max-width: 500px;
+    .hero p {
+      font-size: 24px;
+      color: #e0e0e0;
+      max-width: 600px;
       margin: 0 auto;
+      backdrop-filter: blur(4px);
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      font-size: 14px;
+      color: #ccc;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     main {
       max-width: 600px;
-      margin: 50px auto;
+      margin: 80px auto;
       background: #fff;
       border-radius: 20px;
       box-shadow: 0 20px 40px rgba(0,0,0,0.05);
@@ -74,11 +113,12 @@
       border-radius: 12px;
       font-size: 16px;
       background: #fff;
-      transition: border-color 0.2s ease;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
 
     input:focus {
       border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(0, 113, 227, 0.2);
       outline: none;
     }
 
@@ -91,11 +131,12 @@
       border: none;
       border-radius: 14px;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     button:hover {
       background: #005bb5;
+      transform: scale(1.03);
     }
 
     footer {
@@ -104,16 +145,34 @@
       color: var(--subtle);
       margin: 80px 0 30px;
     }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      main {
+        margin: 40px 20px;
+        padding: 30px 20px;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- Sticky Hero -->
+  <section class="hero">
     <h1>White Mirror</h1>
-    <p>Pre-order the journal designed for healing, reflection, and real inner growth.</p>
-  </header>
+    <p>Journal your way into clarity, healing, and real self-connection.</p>
+    <div class="scroll-down">Scroll ↓</div>
+  </section>
 
-  <main>
+  <!-- Pre-Order Form -->
+  <main class="reveal">
     <form>
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Jane Appleseed" required />
@@ -128,9 +187,26 @@
     </form>
   </main>
 
-  <footer>
+  <footer class="reveal">
     &copy; 2025 White Mirror. Inspired by Apple. Built for change.
   </footer>
 
+  <!-- Scroll Animation Script -->
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    reveals.forEach(reveal => {
+      observer.observe(reveal);
+    });
+  </script>
 </body>
 </html>
