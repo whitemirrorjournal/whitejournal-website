@@ -176,7 +176,7 @@
 
   <div class="container">
     <h1>White Mirror</h1>
-    <p class="subtext">A journal designed for clarity, healing, and human connection.</p>
+    <p class="subtext">A journal designed for  clarity, healing, and human connection.</p>
 
     <div class="description">
       <p>
@@ -185,7 +185,7 @@
       </p>
     </div>
 
-    <form action="https://formspree.io/f/your-form-id" method="POST">
+    <form id="preOrderForm">
       <label for="name">Full Name</label>
       <input type="text" id="name" name="name" placeholder="Jane Appleseed" required />
 
@@ -200,5 +200,66 @@
   </div>
 
   <footer>&copy; 2025 White Mirror. Designed with intention.</footer>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <script>
+  // Firebase config
+  const firebaseConfig = {
+    apiKey: "AIzaSyD2QAVbw9QHLLNhzuCf0xob1Pjqou2i1jM",
+    authDomain: "whitemirrorjournal-bdd24.firebaseapp.com",
+    projectId: "whitemirrorjournal-bdd24",
+    storageBucket: "whitemirrorjournal-bdd24.firebasestorage.app",
+    messagingSenderId: "1071324333687",
+    appId: "1:1071324333687:web:a82c7c74addeda9b97a872",
+    measurementId: "G-W7R7KBK9QC"
+  };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+
+  // Form Submission
+  document.getElementById('preOrderForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim().toLowerCase();
+    const phone = document.getElementById('phone').value.trim();
+
+    if (!name || !email) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+
+    try {
+      // Check for duplicates using both email and phone
+      const querySnapshot = await db.collection("website_form")
+        .where("email", "==", email)
+        .where("phone", "==", phone)
+        .get();
+
+      if (!querySnapshot.empty) {
+        alert("This email and phone number have already been registered.");
+        return;
+      }
+
+      // Add new entry
+      await db.collection("website_form").add({
+        name,
+        email,
+        phone,
+        date: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      window.location.href = "form-success.html";
+    } catch (error) {
+      console.error("Error submitting form: ", error);
+      alert("Something went wrong. Please try again later.");
+    }
+  });
+</script>
 </body>
 </html>
