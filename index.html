@@ -8,9 +8,10 @@
   <style>
     :root {
       --white: #ffffff;
-      --offwhite: #fafafa;
-      --gray: #555;
-      --accent: #dce3ea;
+      --offwhite: #f9fafb;
+      --gray: #444;
+      --black: #000;
+      --accent: #e4e9ee;
       --font: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     }
 
@@ -24,70 +25,72 @@
 
     header {
       text-align: center;
-      padding: 8rem 1rem 6rem;
+      padding: 8rem 1.5rem 6rem;
       background: var(--offwhite);
     }
 
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.5rem;
       font-weight: 600;
-      color: #000;
-      margin-bottom: 1rem;
+      color: var(--black);
+      margin-bottom: 1.2rem;
+      line-height: 1.3;
     }
 
     header p {
-      max-width: 650px;
-      margin: 0 auto 2rem;
+      max-width: 680px;
+      margin: 0 auto 2.5rem;
       font-size: 1.1rem;
-      color: #444;
+      color: var(--gray);
     }
 
     .btn {
       display: inline-block;
       padding: 0.9rem 1.8rem;
-      background: #000;
-      color: #fff;
+      background: var(--black);
+      color: var(--white);
       border-radius: 8px;
       text-decoration: none;
       font-weight: 500;
+      letter-spacing: 0.3px;
       transition: all 0.3s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     }
 
     section {
       max-width: 850px;
       margin: 6rem auto;
-      padding: 0 1rem;
+      padding: 0 1.5rem;
       text-align: center;
     }
 
     section h2 {
-      font-size: 1.8rem;
-      color: #000;
-      margin-bottom: 1.5rem;
+      font-size: 1.9rem;
+      color: var(--black);
+      margin-bottom: 1.3rem;
     }
 
     section p {
       font-size: 1.05rem;
-      color: #444;
+      color: var(--gray);
       margin-bottom: 1rem;
     }
 
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 2rem;
-      margin-top: 2rem;
+      margin-top: 2.5rem;
     }
 
     .feature {
       background: var(--offwhite);
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: 14px;
       transition: all 0.3s ease;
     }
 
@@ -96,8 +99,8 @@
     }
 
     .feature h3 {
-      color: #000;
-      margin-bottom: 0.5rem;
+      color: var(--black);
+      margin-bottom: 0.6rem;
     }
 
     form {
@@ -115,8 +118,8 @@
     }
 
     input[type="submit"] {
-      background: #000;
-      color: #fff;
+      background: var(--black);
+      color: var(--white);
       border: none;
       padding: 0.9rem 2rem;
       border-radius: 8px;
@@ -126,19 +129,19 @@
 
     input[type="submit"]:hover {
       transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     }
 
     footer {
       text-align: center;
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       background: var(--offwhite);
       color: #666;
       font-size: 0.9rem;
     }
 
     footer a {
-      color: #000;
+      color: var(--black);
       text-decoration: none;
       margin: 0 0.5rem;
     }
@@ -153,52 +156,75 @@
     }
   </style>
 </head>
-<body>
-<header>
-  <h1>See yourself clearly again.</h1>
-  <p>
-    White Mirror is a guided journal and digital companion that blends therapeutic psychology with modern design.
-    It helps you slow down, process emotions, and reconnect with the person you are beneath the noise.
-  </p>
-  <a href="#waitlist" class="btn">Join the Waitlist</a>
-</header>
 
+<body>
+  <!-- Hero / Intro -->
+  <header>
+    <h1>See yourself clearly again.</h1>
+    <p>
+      White Mirror is a guided journal and digital app that helps you slow down, understand your emotions, and reconnect with yourself — through intentional design and therapeutic reflection.
+    </p>
+    <a href="#waitlist" class="btn">Join the Waitlist</a>
+  </header>
+
+  <!-- Section 1 -->
   <section>
-    <h2>See yourself more clearly.</h2>
-    <p>White Mirror was born from a simple idea — that emotional healing should feel as intuitive and beautiful as your favorite device.</p>
-    <p>Every page, every prompt, and every scan is designed to guide you inward — helping you understand your emotions, shift your perspective, and cultivate daily self-awareness.</p>
+    <h2>Because self-awareness changes everything.</h2>
+    <p>
+      In a world that moves too fast, we forget to listen inward. White Mirror invites you to pause — to reflect, release, and rediscover your emotional clarity.
+    </p>
+    <p>
+      It’s more than a journal. It’s a personal space for healing and growth — beautifully designed to make reflection feel natural, simple, and real.
+    </p>
   </section>
 
+  <!-- Section 2 -->
   <section>
-    <h2>A guided journal. A digital companion.</h2>
-    <p>Together, the White Mirror Journal and App create a modern self-reflection system — merging the power of writing with intelligent digital tools.</p>
+    <h2>One system for mind and heart.</h2>
+    <p>
+      The White Mirror Journal and App work together to create a seamless self-reflection experience — merging the power of writing with modern technology.
+    </p>
+
     <div class="features">
       <div class="feature">
         <h3>🪞 Reflect</h3>
-        <p>Guided daily and weekly prompts to help you process emotions and find clarity.</p>
+        <p>Daily and weekly guided prompts built on therapeutic methods to help you express and understand your emotions.</p>
       </div>
       <div class="feature">
         <h3>🧠 Reframe</h3>
-        <p>Expressive writing tools inspired by therapeutic psychology to shift patterns and release tension.</p>
+        <p>Expressive writing tools inspired by clinical psychology to shift limiting thoughts and release inner tension.</p>
       </div>
       <div class="feature">
-        <h3>📱 Reconnect</h3>
-        <p>Scan your pages into the app, track patterns, and build mindful habits that last.</p>
+        <h3>📲 Reconnect</h3>
+        <p>Scan your pages into the app, track patterns, and build mindful habits that evolve with you.</p>
       </div>
     </div>
   </section>
 
+  <!-- Section 3 -->
+  <section>
+    <h2>Designed with intention.</h2>
+    <p>
+      Every page, word, and prompt has been crafted with the precision of design and the softness of therapy.
+      White Mirror was made to feel timeless — a reflection of calm and clarity in a noisy world.
+    </p>
+  </section>
+
+  <!-- Waitlist -->
   <section id="waitlist">
-    <h2>Be the first to experience White Mirror.</h2>
-    <p>Join our early community of thinkers and creators who believe emotional wellness should feel beautifully designed.</p>
+    <h2>Join the early community.</h2>
+    <p>
+      Be among the first to experience White Mirror — a new way to journal, reflect, and reconnect.
+    </p>
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <input type="text" name="name" placeholder="Your Name (optional)" /><br />
       <input type="email" name="email" placeholder="Your Email" required /><br />
       <input type="submit" value="Join the Waitlist" />
     </form>
-    <p style="font-size: 0.85rem; color: #777;">We’ll only email you about the White Mirror launch. No spam.</p>
+    <p style="font-size: 0.85rem; color: #777;">We’ll only email you about the White Mirror launch. No spam — ever.</p>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p><em>Clarity begins within.</em></p>
     <p>
