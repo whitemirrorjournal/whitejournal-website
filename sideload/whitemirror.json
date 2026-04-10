@@ -2,7 +2,7 @@
     "name": "White Mirror Journal",
     "subtitle": "90 Days of Self-Reflection",
     "description": "White Mirror is a premium 90-day self-reflection journal and companion app. Through the M.I.R.R.O.R. method, daily prompts, and pattern insights, it guides you toward deeper self-awareness — one day at a time.",
-    "iconURL": "https://drop-eg.com/24_Mail_Signature/Drop_Mail_Logo.png",
+    "iconURL": "https://whitemirrorjournal.com/assets/branding/app_icon.png",
     "headerURL": "https://drop-eg.com/sideload/header.png",
     "website": "https://whitemirrorjournal.com",
     "tintColor": "#1A1A1A",
@@ -16,7 +16,7 @@
             "developerName": "White Mirror Journal",
             "subtitle": "Your 90-Day Reflection Companion.",
             "localizedDescription": "Your 90-Day Reflection Companion.",
-            "iconURL": "https://drop-eg.com/24_Mail_Signature/Drop_Mail_Logo.png",
+            "iconURL": "https://whitemirrorjournal.com/assets/branding/app_icon.png",
             "tintColor": "#1A1A1A",
             "screenshots": [
                 "https://drop-eg.com/sideload/screen-shots/1.webp",
