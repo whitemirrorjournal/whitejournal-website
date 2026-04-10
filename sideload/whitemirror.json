@@ -12,7 +12,7 @@
     "apps": [
         {
             "name": "White Mirror",
-            "bundleIdentifier": "com.whitemirror.journal",
+            "bundleIdentifier": "com.whitemirror.app",
             "developerName": "White Mirror Journal",
             "subtitle": "Your 90-Day Reflection Companion.",
             "localizedDescription": "Your 90-Day Reflection Companion.",
