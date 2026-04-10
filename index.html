@@ -1,370 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>White Mirror Journal</title>
-
-  <style>
-    :root {
-      --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-        "SF Pro Display", Inter, system-ui, sans-serif;
-
-      --bg: 0 0% 98%;
-      --fg: 220 15% 15%;
-      --muted: 220 10% 45%;
-
-      --glass-bg: 0 0% 100% / 0.65;
-      --glass-border: 0 0% 100% / 0.35;
-      --glass-shadow: 0 0% 0% / 0.08;
-
-      --accent: 150 20% 35%;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: var(--font-sans);
-      background: hsl(var(--bg));
-      color: hsl(var(--fg));
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.7;
-    }
-
-    main {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 80px 24px 120px;
-    }
-
-    section {
-      margin-bottom: 140px;
-    }
-
-    .glass {
-      background: hsl(var(--glass-bg));
-      backdrop-filter: blur(22px) saturate(1.1);
-      -webkit-backdrop-filter: blur(22px) saturate(1.1);
-      border: 1px solid hsl(var(--glass-border));
-      border-radius: 28px;
-      box-shadow:
-        0 20px 50px hsl(var(--glass-shadow)),
-        inset 0 1px 0 hsl(0 0% 100% / 0.4);
-    }
-
-    /* ---------- HERO ---------- */
-
-    .hero {
-      text-align: center;
-      padding: 96px 64px;
-    }
-
-    .hero .label {
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: hsl(var(--accent));
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 3.4rem;
-      font-weight: 500;
-      letter-spacing: -0.04em;
-      margin-bottom: 28px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: hsl(var(--muted));
-      max-width: 640px;
-      margin: 0 auto 40px;
-    }
-
-    .hero a {
-      display: inline-block;
-      padding: 14px 28px;
-      border-radius: 18px;
-      background: hsl(var(--accent));
-      color: #fff;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    /* ---------- HOW IT WORKS ---------- */
-
-    .center {
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto;
-    }
-
-    .center h2 {
-      font-size: 2.4rem;
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    .center p {
-      color: hsl(var(--muted));
-      font-size: 1.1rem;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 48px;
-      margin-top: 72px;
-    }
-
-    .step {
-      text-align: center;
-    }
-
-    .step h3 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 12px;
-    }
-
-    .step p {
-      color: hsl(var(--muted));
-      font-size: 0.95rem;
-    }
-
-    /* ---------- MIRROR METHOD ---------- */
-
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 32px;
-      margin-top: 72px;
-    }
-
-    .method-card {
-      padding: 32px;
-    }
-
-    .method-card strong {
-      display: inline-block;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: hsl(var(--accent));
-      margin-bottom: 8px;
-    }
-
-    .method-card h4 {
-      font-size: 1.2rem;
-      font-weight: 500;
-      margin-bottom: 8px;
-    }
-
-    .method-card p {
-      font-size: 0.95rem;
-      color: hsl(var(--muted));
-    }
-
-    /* ---------- WHO IT'S FOR ---------- */
-
-    .who {
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .who-item {
-      padding: 28px 32px;
-      margin-bottom: 24px;
-    }
-
-    .who-item h4 {
-      margin: 0 0 6px;
-      font-size: 1.05rem;
-      font-weight: 500;
-    }
-
-    .who-item p {
-      margin: 0;
-      color: hsl(var(--muted));
-      font-size: 0.95rem;
-    }
-
-    /* ---------- CTA ---------- */
-
-    .cta {
-      max-width: 560px;
-      margin: 0 auto;
-      padding: 64px;
-      text-align: center;
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      font-weight: 500;
-      letter-spacing: -0.03em;
-      margin-bottom: 20px;
-    }
-
-    .cta p {
-      color: hsl(var(--muted));
-      margin-bottom: 32px;
-    }
-
-    form input {
-      width: 100%;
-      padding: 16px;
-      font-size: 1rem;
-      border-radius: 14px;
-      border: 1px solid rgba(0,0,0,0.15);
-      margin-bottom: 16px;
-    }
-
-    form button {
-      width: 100%;
-      padding: 16px;
-      font-size: 1rem;
-      border-radius: 16px;
-      border: none;
-      background: #111;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 100px;
-      font-size: 0.9rem;
-      color: hsl(var(--muted));
-    }
-  </style>
+  <meta name="description"
+    content="White Mirror — 90 days of radical self-awareness. A guided journal system and companion app built on the M.I.R.R.O.R. method." />
+  <meta name="keywords" content="journaling, self-awareness, mindfulness, journal, reflection, M.I.R.R.O.R., 90 days" />
+  <meta property="og:title" content="White Mirror — 90 Days of Radical Self-Awareness" />
+  <meta property="og:description" content="A guided journal system for people who are done running from themselves." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.whitemirrorjournal.com" />
+  <title>White Mirror — 90 Days of Radical Self-Awareness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="assets/app_icon.png" />
 </head>
 
 <body>
-  <main>
 
-    <!-- HERO -->
-    <section class="glass hero">
-      <div class="label">WHITE MIRROR JOURNAL</div>
-      <h1>A quiet space to understand yourself.</h1>
-      <p>
-        A guided journal for emotional clarity, reflection, and healing —
-        designed to help you slow down and see yourself without judgment.
+
+
+
+  <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" id="nav-logo">WHITE MIRROR</a>
+      <div class="nav-links" id="nav-links">
+        <a href="#method" class="nav-link">The Method</a>
+        <a href="#journal" class="nav-link">The Journal</a>
+        <a href="#app" class="nav-link">The App</a>
+        <a href="#phases" class="nav-link">90 Days</a>
+      </div>
+      <a href="https://app.whitemirrorjournal.com" class="nav-cta" id="nav-cta" target="_blank" rel="noopener">Sign
+        In</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#method" class="mobile-link">The Method</a>
+      <a href="#journal" class="mobile-link">The Journal</a>
+      <a href="#app" class="mobile-link">The App</a>
+      <a href="#phases" class="mobile-link">90 Days</a>
+      <a href="https://app.whitemirrorjournal.com" class="mobile-cta" target="_blank" rel="noopener">Open the App</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg-grid" aria-hidden="true"></div>
+    <div class="hero-content">
+      <span class="eyebrow fade-in" style="--delay:0.1s">WHITE MIRROR</span>
+      <h1 class="hero-title fade-in" style="--delay:0.25s" style="font-size: 3.5rem;">
+        The most important conversation you'll ever have<br />is the one you keep postponing with yourself.
+      </h1>
+      <p class="hero-subtitle fade-in" style="--delay:0.4s">
+        90 days to stop postponing it.
       </p>
-      <a href="#early-access">Request Early Access</a>
-    </section>
+      <div class="hero-actions fade-in" style="--delay:0.55s">
+        <a href="#waitlist" class="btn-primary" id="hero-cta-primary">Join the waitlist &rarr;</a>
+      </div>
+    </div>
+    <a href="#method" class="scroll-hint" id="scroll-hint" aria-label="Scroll down">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </section>
 
-    <!-- HOW IT WORKS -->
-    <section>
-      <div class="center">
-        <h2>How it works</h2>
-        <p>
-          A gentle three-step process to help you understand yourself better.
+  <!-- ═══════════════════════════════════════ PROOF STRIP ═══════════════════════════════════════ -->
+  <div class="proof-strip">
+    <div class="proof-inner">
+      <div class="proof-item">
+        <span class="proof-num">90</span>
+        <span class="proof-label">Daily Prompts</span>
+      </div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">
+        <span class="proof-num">5</span>
+        <span class="proof-label">Phases of Growth</span>
+      </div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">
+        <span class="proof-num">6</span>
+        <span class="proof-label">M.I.R.R.O.R. Steps</span>
+      </div>
+      <div class="proof-divider" aria-hidden="true"></div>
+      <div class="proof-item">
+        <span class="proof-num">500</span>
+        <span class="proof-label">Journals. First batch.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════ METHOD ═══════════════════════════════════════ -->
+  <section class="section method-section" id="method">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">THE METHOD</span>
+        <h2 class="section-title">The M.I.R.R.O.R. method.</h2>
+        <p class="section-body">Six steps. One practice. Every prompt in this journal — and every screen in the app —
+          follows this arc.</p>
+      </div>
+
+      <div class="mirror-grid" id="mirror-grid">
+        <div class="mirror-card reveal" style="--i:0">
+          <div class="mirror-letter">M</div>
+          <div class="mirror-word">Moment</div>
+          <p class="mirror-desc">Ground yourself in the present. Before you reflect, you must arrive. Notice what's
+            happening right now — in your body, your breath, this moment.</p>
+        </div>
+        <div class="mirror-card reveal" style="--i:1">
+          <div class="mirror-letter">I</div>
+          <div class="mirror-word">Identify</div>
+          <p class="mirror-desc">Name what you feel without judgment. Clarity begins with honest recognition. What
+            emotion is present? What thought keeps returning?</p>
+        </div>
+        <div class="mirror-card reveal" style="--i:2">
+          <div class="mirror-letter">R</div>
+          <div class="mirror-word">Reflect</div>
+          <p class="mirror-desc">Go deeper than the surface. Ask why. Trace the feeling to its root. Your journal prompt
+            lives here — in this honest, unguarded space.</p>
+        </div>
+        <div class="mirror-card reveal" style="--i:3">
+          <div class="mirror-letter">R</div>
+          <div class="mirror-word">Reframe</div>
+          <p class="mirror-desc">Choose a different lens. Not toxic positivity — genuine perspective. What else could be
+            true? What does this teach you?</p>
+        </div>
+        <div class="mirror-card reveal" style="--i:4">
+          <div class="mirror-letter">O</div>
+          <div class="mirror-word">Observe</div>
+          <p class="mirror-desc">Step back and witness your pattern. Over 90 days, you'll notice themes. Your mood map
+            and AI insights help you see the shape of your growth.</p>
+        </div>
+        <div class="mirror-card reveal" style="--i:5">
+          <div class="mirror-letter">R</div>
+          <div class="mirror-word">Rise</div>
+          <p class="mirror-desc">Carry one intention forward. Not a resolution — a single, grounded step. Rise doesn't
+            mean up. It means forward. Consistently.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ SYSTEM ═══════════════════════════════════════ -->
+  <section class="section journal-section" id="journal">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow reveal">THE PHYSICAL EDITION</span>
+        <h2 class="section-title reveal">The practice starts here.</h2>
+        <p class="section-body reveal">
+          White Mirror is a premium, hardcover guided journal currently in production. Inside, you'll find 90 prompts
+          mapped across five phases of growth, all governed by the M.I.R.R.O.R. method.
+        </p>
+        <p class="section-body reveal">
+          Each journal contains a unique code linking your physical artifact to your digital companion app—giving you a
+          hybrid space to reflect without judgment.
         </p>
       </div>
 
-      <div class="steps">
-        <div class="step">
-          <h3>Check in with your emotions</h3>
-          <p>Start by naming how you truly feel, without judgment.</p>
+      <div class="journal-features reveal">
+        <div class="jf-item">
+          <div class="jf-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <div>
+            <div class="jf-title">90 curated prompts</div>
+            <div class="jf-desc">Each one mapped to the M.I.R.R.O.R. letter for that day</div>
+          </div>
         </div>
-        <div class="step">
-          <h3>Reflect using guided prompts</h3>
-          <p>Thoughtful questions help you understand what’s beneath the surface.</p>
+        <div class="jf-item">
+          <div class="jf-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4l3 3" />
+            </svg>
+          </div>
+          <div>
+            <div class="jf-title">5 phases, 18 weeks</div>
+            <div class="jf-desc">Awakening → Excavation → The Turn → Pattern Work → Rising</div>
+          </div>
         </div>
-        <div class="step">
-          <h3>Build clarity through writing</h3>
-          <p>Express freely. Let your thoughts find their shape on the page.</p>
+        <div class="jf-item">
+          <div class="jf-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+          </div>
+          <div>
+            <div class="jf-title">Daily affirmations</div>
+            <div class="jf-desc">One grounding statement to carry into your day</div>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- MIRROR METHOD -->
-    <section>
-      <div class="center">
-        <div class="label">OUR APPROACH</div>
-        <h2>The M.I.R.R.O.R. Method</h2>
-        <p>
-          A gentle framework for emotional clarity, inspired by psychology and expressive writing.
+      <div class="journal-ctas reveal">
+        <a href="#waitlist" class="btn-primary">Claim 50% Off AI Features</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ APP ═══════════════════════════════════════ -->
+  <section class="section app-section" id="app">
+    <div class="container app-container">
+      <div class="section-header">
+        <span class="eyebrow reveal">THE APP</span>
+        <h2 class="section-title reveal">Your digital<br />companion.</h2>
+        <p class="section-body reveal">
+          When you receive your physical journal, the app activates. It acts as an ambient companion—built around your
+          current phase, prompt, and M.I.R.R.O.R. letter.
         </p>
       </div>
 
-      <div class="method-grid">
-        <div class="glass method-card">
-          <strong>M</strong>
-          <h4>Mood</h4>
-          <p>Notice and name your current emotional state.</p>
+      <div class="app-features reveal">
+        <div class="app-feat">
+          <span class="app-feat-label">MOOD MAP</span>
+          <p class="app-feat-desc">90 days of mood data visualised. See the emotional arc of your journey laid out as a
+            heat map — patterns you couldn't see day to day.</p>
         </div>
-        <div class="glass method-card">
-          <strong>I</strong>
-          <h4>Identify</h4>
-          <p>Recognize what triggered these feelings.</p>
+        <div class="app-feat">
+          <span class="app-feat-label">AI INSIGHTS</span>
+          <p class="app-feat-desc">Weekly reflections generated from your entries. Surface themes, name blind spots, and
+            celebrate growth you might have missed.</p>
         </div>
-        <div class="glass method-card">
-          <strong>R</strong>
-          <h4>Reflect</h4>
-          <p>Explore why this matters to you.</p>
+        <div class="app-feat">
+          <span class="app-feat-label">ARCHIVE</span>
+          <p class="app-feat-desc">Every entry, searchable and chronological. Your 90-day story, always accessible.</p>
         </div>
-        <div class="glass method-card">
-          <strong>R</strong>
-          <h4>Reframe</h4>
-          <p>Express through writing. Let it flow freely.</p>
+        <div class="app-feat">
+          <span class="app-feat-label">COMMUNITY</span>
+          <p class="app-feat-desc">A private circle of people on the same journey. No public feed. Anonymous by default.
+            Depth over volume.</p>
         </div>
-        <div class="glass method-card">
-          <strong>O</strong>
-          <h4>Observe</h4>
-          <p>Step back. Notice patterns and insights.</p>
-        </div>
-        <div class="glass method-card">
-          <strong>R</strong>
-          <h4>Resolve</h4>
-          <p>Find one small step toward peace.</p>
+        <div class="app-feat">
+          <span class="app-feat-label">ACCOUNT & PRIVACY</span>
+          <p class="app-feat-desc">Full control over your data. Manage your 90-day progress, update your profile, and
+            secure your reflections.</p>
         </div>
       </div>
-    </section>
 
-    <!-- WHO IT'S FOR -->
-    <section class="who">
-      <div class="center">
-        <h2>Who it’s for</h2>
-        <p>White Mirror is designed for people who need space to breathe.</p>
+      <div class="app-ctas reveal">
+        <a href="#waitlist" class="btn-light" id="app-cta-web">Join Waitlist</a>
       </div>
 
-      <div class="glass who-item">
-        <h4>Overwhelmed professionals</h4>
-        <p>For those carrying the weight of endless responsibilities.</p>
+      <div class="app-visual-col reveal" style="width: 100%; margin-top: 2rem;">
+        <div class="system-showcase-container">
+          <div class="system-showcase-col left">
+            <img src="assets/journal_scan_page.jpg" alt="White Mirror physical journal scan" class="system-journal-img"
+              loading="lazy" />
+          </div>
+
+          <div class="system-showcase-col right">
+            <div class="iphone-mockup">
+              <img src="assets/iphone_frame_silver.png" alt="iPhone 17 Pro Silver Frame" class="iphone-frame-img" />
+              <div class="iphone-screen">
+                <img src="assets/app_ui_reflection.jpg" alt="White Mirror companion app UI dashboard reflection"
+                  class="iphone-ui" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ PHASES ═══════════════════════════════════════ -->
+  <section class="section phases-section" id="phases">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">90 DAYS</span>
+        <h2 class="section-title">Five phases. One arc.</h2>
+        <p class="section-body">The 90 days aren't random. They're structured as a deliberate journey — each phase
+          building on the last.</p>
       </div>
 
-      <div class="glass who-item">
-        <h4>People who feel “fine” but heavy</h4>
-        <p>When everything looks okay on the surface, but something feels off.</p>
+      <div class="phases-timeline" id="phases-timeline">
+        <div class="phase-item reveal" style="--i:0" data-phase="1">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-eyebrow">Phase 1 · Days 1–18</span>
+            </div>
+            <h3 class="phase-name">Awakening</h3>
+            <p class="phase-desc">The practice begins here. Before anything can change, you have to see where you
+              actually are — clearly, without softening it. Day one is an arrival, not a transformation.</p>
+          </div>
+        </div>
+
+        <div class="phase-item reveal" style="--i:1" data-phase="2">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-eyebrow">Phase 2 · Days 19–36</span>
+            </div>
+            <h3 class="phase-name">Excavation</h3>
+            <p class="phase-desc">You start digging. The prompts go deeper — into the stories you inherited, the
+              defenses you built, the versions of yourself you perform without realising it.</p>
+          </div>
+        </div>
+
+        <div class="phase-item reveal" style="--i:2" data-phase="3">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-eyebrow">Phase 3 · Days 37–54</span>
+            </div>
+            <h3 class="phase-name">The Turn</h3>
+            <p class="phase-desc">The hardest phase. Everything shifts here — not because circumstances change, but
+              because you choose a different lens. Reframe days begin. Old stories get examined.</p>
+          </div>
+        </div>
+
+        <div class="phase-item reveal" style="--i:3" data-phase="4">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+            <div class="phase-line"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-eyebrow">Phase 4 · Days 55–72</span>
+            </div>
+            <h3 class="phase-name">Pattern Work</h3>
+            <p class="phase-desc">You stop reacting and start watching. Patterns you couldn't see day to day become
+              visible. Your mood map and AI insights start to show you the shape of your own mind.</p>
+          </div>
+        </div>
+
+        <div class="phase-item reveal" style="--i:4" data-phase="5">
+          <div class="phase-connector">
+            <div class="phase-dot"></div>
+          </div>
+          <div class="phase-body">
+            <div class="phase-meta">
+              <span class="phase-eyebrow">Phase 5 · Days 73–90</span>
+            </div>
+            <h3 class="phase-name">Rising</h3>
+            <p class="phase-desc">The practice becomes the life. You don't journal to feel better anymore — you journal
+              because you know yourself now. Day 90 is not an ending. It's the first day you don't need to be told who
+              you are.</p>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="glass who-item">
-        <h4>Seekers of clarity, not hype</h4>
-        <p>For those who want understanding, not motivational noise.</p>
+  <!-- ═══════════════════════════════════════ QUOTE ═══════════════════════════════════════ -->
+  <section class="section quote-section">
+    <div class="container quote-container reveal">
+      <div class="quote-mark" aria-hidden="true">"</div>
+      <blockquote class="quote-text">
+        The white mirror doesn't show you who you wish you were.<br />
+        <em>It shows you who you actually are.</em>
+      </blockquote>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════ WAITLIST CTA ═══════════════════════════════════════ -->
+  <section class="section cta-section" id="waitlist">
+    <div class="container cta-container">
+      <div class="cta-card reveal">
+        <span class="eyebrow" style="color: var(--secondary)">EARLY ACCESS</span>
+        <h2 class="cta-title">The journal is in production.</h2>
+        <p class="cta-body">Join the waitlist today and be the first to know when pre-orders open.</p>
+
+        <form id="waitlist-form" class="cta-form reveal"
+          onsubmit="event.preventDefault(); document.getElementById('waitlist-form').classList.add('hidden'); document.getElementById('waitlist-success').classList.remove('hidden');"
+          style="margin-top: 32px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <input type="email" id="waitlist-email" placeholder="Enter your email" required
+            style="width: 100%; max-width: 400px; padding: 16px 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); background: rgba(0,0,0,0.4); color: white; font-family: 'Inter', sans-serif; font-size: 1rem; outline: none;" />
+          <button type="submit" class="btn-light" id="waitlist-submit" style="width: 100%; max-width: 400px;">Join
+            Waitlist</button>
+        </form>
+        <div id="waitlist-success" class="cta-success hidden"
+          style="margin-top: 32px; padding: 24px; border-radius: 12px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);">
+          <h3 style="font-family: 'Lora', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 8px;">You're on
+            the list.</h3>
+          <p style="color: var(--secondary); font-size: 0.95rem;">Keep an eye on your inbox. We'll send you a private
+            link when the first batch is ready for pre-order.</p>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA -->
-    <section id="early-access" class="glass cta">
-      <h2>Join the early access list</h2>
-      <p>
-        Be the first to experience White Mirror when we launch.
-        We respect your privacy. No spam. Ever.
-      </p>
+  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="footer-logo">WHITE MIRROR</span>
+        <p class="footer-tagline">A guided journal system for people who are done<br />running from themselves.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <span class="footer-col-label">PRACTICE</span>
+          <a href="#method" class="footer-link">The M.I.R.R.O.R. Method</a>
+          <a href="#phases" class="footer-link">The 90 Days</a>
+          <a href="#journal" class="footer-link">The Journal</a>
+        </div>
+        <div class="footer-col">
+          <span class="footer-col-label">APP</span>
+          <a href="https://app.whitemirrorjournal.com" class="footer-link" target="_blank" rel="noopener">Open the
+            App</a>
+          <a href="https://app.whitemirrorjournal.com/signup" class="footer-link" target="_blank" rel="noopener">Sign
+            Up</a>
+          <a href="https://app.whitemirrorjournal.com/login" class="footer-link" target="_blank" rel="noopener">Log
+            In</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 White Mirror. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-legal-link">Privacy</a>
+        <a href="#" class="footer-legal-link">Terms</a>
+      </div>
+    </div>
+  </footer>
 
-      <form action="https://formspree.io/f/xnqkqzye" method="POST">
-        <input type="email" name="email" placeholder="Your email address" required />
-        <button type="submit">Join the Early Access List</button>
-      </form>
-    </section>
-
-    <footer>
-      © 2026 White Mirror Journal. Made with care.
-    </footer>
-
-  </main>
+  <script src="//code.tidio.co/r7c10ab8h4cnokqgjdqk6pazcd6jlldw.js" async></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
