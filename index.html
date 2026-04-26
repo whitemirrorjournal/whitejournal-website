@@ -4,581 +4,235 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="White Mirror — See yourself clearly in 90 days. A guided journal and companion app designed to help you understand your emotions, recognize patterns, and build clarity." />
-  <meta name="keywords" content="journaling, self-awareness, mindfulness, journal, reflection, M.I.R.R.O.R., 90 days" />
-  <meta property="og:title" content="White Mirror — See Yourself Clearly in 90 Days" />
-  <meta property="og:description" content="A guided journal and companion app for radical self-awareness." />
+  <meta name="description" content="White Mirror — The most important conversation is the one you postpone with yourself. 90 days. Six practices. One transformation." />
+  <meta property="og:title" content="White Mirror" />
+  <meta property="og:description" content="The most important conversation is the one you postpone with yourself." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.whitemirrorjournal.com" />
-  <title>White Mirror — See Yourself Clearly in 90 Days</title>
+  <title>White Mirror</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Lora:ital,wght@0,400;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" type="image/png" href="assets/app_icon.png" />
+  <link rel="icon" type="image/png" href="favicon.png" />
 </head>
 
 <body>
 
-  <!-- ═══════════════════════════════════════ NAV ═══════════════════════════════════════ -->
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="#" class="nav-logo" id="nav-logo">WHITE MIRROR</a>
-      <div class="nav-links" id="nav-links">
-        <a href="#how" class="nav-link">How it Works</a>
-        <a href="#journal" class="nav-link">The Journal</a>
-        <a href="#app" class="nav-link">The App</a>
-        <a href="#phases" class="nav-link">90 Days</a>
-        <a href="#contact" class="nav-link">Contact</a>
+      <a href="index.html" class="nav-logo">WHITE MIRROR</a>
+      <div class="nav-links">
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#method"   class="nav-link">Method</a>
+        <a href="#phases"   class="nav-link">90 Days</a>
+        <a href="#contact"  class="nav-link">Contact</a>
       </div>
-      <a href="https://app.whitemirrorjournal.com" class="nav-cta" id="nav-cta" target="_blank" rel="noopener">Sign In</a>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+      <a href="https://app.whitemirrorjournal.com" class="nav-cta" target="_blank" rel="noopener">Sign In</a>
+      <button class="nav-hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
         <span></span><span></span>
       </button>
     </div>
     <div class="mobile-menu" id="mobile-menu">
-      <a href="#how" class="mobile-link">How it Works</a>
-      <a href="#journal" class="mobile-link">The Journal</a>
-      <a href="#app" class="mobile-link">The App</a>
-      <a href="#phases" class="mobile-link">90 Days</a>
-      <a href="#contact" class="mobile-link">Contact</a>
-      <a href="https://app.whitemirrorjournal.com" class="mobile-cta" target="_blank" rel="noopener">Open the App</a>
+      <a href="#features" class="mobile-link">Features</a>
+      <a href="#method"   class="mobile-link">Method</a>
+      <a href="#phases"   class="mobile-link">90 Days</a>
+      <a href="#contact"  class="mobile-link">Contact</a>
+      <a href="https://app.whitemirrorjournal.com" class="mobile-cta" target="_blank" rel="noopener">Open App</a>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════ HERO ═══════════════════════════════════════ -->
-  <section class="hero" id="hero">
-    <div class="hero-bg-grid" aria-hidden="true"></div>
-    <div class="hero-content">
-      <span class="eyebrow fade-in" style="--delay:0.1s">WHITE MIRROR</span>
-      <h1 class="hero-title fade-in" style="--delay:0.25s">
-        See yourself clearly<br>in 90 days.
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <p class="hero-kicker">White Mirror Journal</p>
+      <h1 class="hero-headline">
+        The most important conversation<br />
+        is the one <em>you postpone<br />with yourself.</em>
       </h1>
-      <p class="hero-subtitle fade-in" style="--delay:0.42s">
-        A guided journal and companion app designed to help you understand your emotions, recognize patterns, and build clarity — one reflection at a time.
+      <p class="hero-sub">
+        90 days. Six practices. One mirror that never lies.
       </p>
-      <div class="hero-actions fade-in" style="--delay:0.58s">
-        <a href="#waitlist" class="btn-primary">Start your journey</a>
-        <a href="#waitlist" class="btn-ghost">Join waitlist</a>
-      </div>
-      <p class="hero-microcopy fade-in" style="--delay:0.72s">No spam. Only meaningful updates.</p>
-    </div>
-
-    <div class="hero-visual fade-in" style="--delay:0.9s">
-      <div class="hero-product-scene">
-        <div class="hero-journal-wrap">
-          <img src="assets/journal_scan_page.jpg" alt="White Mirror physical journal" class="hero-journal-img" loading="eager" />
-          <span class="hero-product-caption">The Journal</span>
-        </div>
-        <div class="hero-phone-wrap">
-          <div class="iphone-mockup hero-iphone">
-            <img src="assets/iphone_frame_silver.png" alt="iPhone frame" class="iphone-frame-img" />
-            <div class="iphone-screen">
-              <img src="assets/app_ui_reflection.jpg" alt="White Mirror companion app" class="iphone-ui" loading="eager" />
-            </div>
-          </div>
-          <span class="hero-product-caption">The App</span>
-        </div>
+      <div class="hero-actions">
+        <a href="https://app.whitemirrorjournal.com/signup" class="btn-primary" target="_blank" rel="noopener">Begin now</a>
+        <a href="#features" class="btn-ghost">See what's inside</a>
       </div>
     </div>
-
-    <a href="#how" class="scroll-hint" id="scroll-hint" aria-label="Scroll down">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
-    </a>
   </section>
 
-  <!-- ═══════════════════════════════════════ PROOF STRIP ═══════════════════════════════════════ -->
-  <div class="proof-strip">
-    <div class="proof-inner">
-      <div class="proof-item">
-        <span class="proof-num">90</span>
-        <span class="proof-label">Daily Prompts</span>
-      </div>
-      <div class="proof-divider" aria-hidden="true"></div>
-      <div class="proof-item">
-        <span class="proof-num">5</span>
-        <span class="proof-label">Phases of Growth</span>
-      </div>
-      <div class="proof-divider" aria-hidden="true"></div>
-      <div class="proof-item">
-        <span class="proof-num">6</span>
-        <span class="proof-label">M.I.R.R.O.R. Steps</span>
-      </div>
-      <div class="proof-divider" aria-hidden="true"></div>
-      <div class="proof-item">
-        <span class="proof-num">500</span>
-        <span class="proof-label">Journals. First batch.</span>
-      </div>
-    </div>
-  </div>
+  <div class="divider"></div>
 
-  <!-- ═══════════════════════════════════════ HOW IT WORKS ═══════════════════════════════════════ -->
-  <section class="section how-section" id="how">
+  <!-- FEATURES — 6 app tabs, exact match -->
+  <section class="section" id="features">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow reveal">THE SYSTEM</span>
-        <h2 class="section-title reveal">How White Mirror works.</h2>
-        <p class="section-body reveal">Four steps. One complete practice. Designed to fit your life — not disrupt it.</p>
+      <div class="features-header">
+        <p class="section-label">The App</p>
+        <h2 class="section-title">Six tabs.<br />One complete practice.</h2>
+        <p class="section-sub">Every screen built for one thing — going deeper into yourself.</p>
       </div>
 
-      <div class="steps-grid">
-        <div class="step reveal" style="--i:0">
-          <div class="step-num">01</div>
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 20h9"/>
-              <path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
-            </svg>
-          </div>
-          <h3 class="step-title">Reflect</h3>
-          <p class="step-desc">Write guided daily entries in the physical journal using the M.I.R.R.O.R. method.</p>
+      <div class="features-grid">
+
+        <div class="feature-card">
+          <div class="feature-icon">☀</div>
+          <p class="feature-tab">Today</p>
+          <h3 class="feature-title">Your day, distilled.</h3>
+          <p class="feature-desc">One prompt. Six moods. Space to write. Every entry encrypted end-to-end — yours alone. Scan your physical journal with your camera and it comes in too.</p>
         </div>
 
-        <div class="step reveal" style="--i:1">
-          <div class="step-num">02</div>
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
-              <circle cx="12" cy="13" r="4"/>
-            </svg>
-          </div>
-          <h3 class="step-title">Capture</h3>
-          <p class="step-desc">Scan your reflections into the companion app. Your physical words become digital insight.</p>
+        <div class="feature-card">
+          <div class="feature-icon">◈</div>
+          <p class="feature-tab">Insights</p>
+          <h3 class="feature-title">Patterns you can't unsee.</h3>
+          <p class="feature-desc">AI reads across your entries and surfaces what's shifting. Not summaries — genuine signal. Gets sharper as your practice deepens.</p>
         </div>
 
-        <div class="step reveal" style="--i:2">
-          <div class="step-num">03</div>
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="20" x2="18" y2="10"/>
-              <line x1="12" y1="20" x2="12" y2="4"/>
-              <line x1="6" y1="20" x2="6" y2="14"/>
-            </svg>
-          </div>
-          <h3 class="step-title">Understand</h3>
-          <p class="step-desc">Track your emotions, recognize patterns, and surface hidden triggers over time.</p>
+        <div class="feature-card">
+          <div class="feature-icon">♫</div>
+          <p class="feature-tab">Music</p>
+          <h3 class="feature-title">Sound that works.</h3>
+          <p class="feature-desc">Curated channels for focus, flow, and stillness. Plays through your entire session — including while you write or breathe.</p>
         </div>
 
-        <div class="step reveal" style="--i:3">
-          <div class="step-num">04</div>
-          <div class="step-icon-wrap">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-            </svg>
-          </div>
-          <h3 class="step-title">Transform</h3>
-          <p class="step-desc">Receive weekly AI insights that help you break patterns and grow with intention.</p>
+        <div class="feature-card">
+          <div class="feature-icon">○</div>
+          <p class="feature-tab">Meditate</p>
+          <h3 class="feature-title">Breathe on purpose.</h3>
+          <p class="feature-desc">Guided, silent, or with music. Three durations. One animated circle. 4-4-6 box breathing — the method behind the calm.</p>
         </div>
-      </div>
 
-      <div class="section-cta reveal">
-        <a href="#waitlist" class="btn-primary">Start your journey</a>
+        <div class="feature-card">
+          <div class="feature-icon">◉</div>
+          <p class="feature-tab">Circles</p>
+          <h3 class="feature-title">Practice together.</h3>
+          <p class="feature-desc">Live sessions with people doing the same work. Create a Circle or join one. No audience. Shared accountability — nothing else.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">◎</div>
+          <p class="feature-tab">You</p>
+          <h3 class="feature-title">The full picture.</h3>
+          <p class="feature-desc">Your streak. Your arc. Your 90-day progress. Everything in one place, so the momentum is always visible.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ JOURNAL ═══════════════════════════════════════ -->
-  <section class="section journal-section" id="journal">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow reveal">THE PHYSICAL EDITION</span>
-        <h2 class="section-title reveal">The practice starts here.</h2>
-        <p class="section-body reveal">
-          White Mirror is a premium, hardcover guided journal in production. Inside: 90 prompts mapped across five phases of growth, all governed by the M.I.R.R.O.R. method.
-        </p>
-      </div>
+  <div class="divider"></div>
 
-      <div class="journal-showcase reveal">
-        <div class="journal-showcase-img-wrap">
-          <img src="assets/journal_scan_page.jpg" alt="White Mirror physical journal" class="journal-showcase-img" loading="lazy" />
-          <div class="journal-showcase-badge">
-            <span class="badge-num">500</span>
-            <span class="badge-label">First Edition<br>Journals</span>
-          </div>
-        </div>
-        <div class="journal-showcase-content">
-          <div class="showcase-caption reveal">Designed for clarity</div>
-          <div class="journal-features">
-            <div class="jf-item reveal" style="--i:0">
-              <div class="jf-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                  <path d="M2 17l10 5 10-5"/>
-                  <path d="M2 12l10 5 10-5"/>
-                </svg>
-              </div>
-              <div>
-                <div class="jf-title">90 curated prompts</div>
-                <div class="jf-desc">Each one mapped to the M.I.R.R.O.R. letter for that day</div>
-              </div>
-            </div>
-            <div class="jf-item reveal" style="--i:1">
-              <div class="jf-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M12 8v4l3 3"/>
-                </svg>
-              </div>
-              <div>
-                <div class="jf-title">5 phases, 18 weeks</div>
-                <div class="jf-desc">Awakening → Excavation → The Turn → Pattern Work → Rising</div>
-              </div>
-            </div>
-            <div class="jf-item reveal" style="--i:2">
-              <div class="jf-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-                </svg>
-              </div>
-              <div>
-                <div class="jf-title">Daily affirmations</div>
-                <div class="jf-desc">One grounding statement to carry into your day</div>
-              </div>
-            </div>
-            <div class="jf-item reveal" style="--i:3">
-              <div class="jf-icon">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                  <path d="M7 11V7a5 5 0 0110 0v4"/>
-                </svg>
-              </div>
-              <div>
-                <div class="jf-title">Unique activation code</div>
-                <div class="jf-desc">Links your physical journal to your digital companion app</div>
-              </div>
-            </div>
-          </div>
-          <div class="journal-ctas reveal">
-            <a href="#waitlist" class="btn-primary">Claim early access</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ APP ═══════════════════════════════════════ -->
-  <section class="section app-section" id="app">
-    <div class="container app-container">
-      <div class="section-header">
-        <span class="eyebrow reveal">THE COMPANION APP</span>
-        <h2 class="section-title reveal">Your digital<br>mirror.</h2>
-        <p class="section-body reveal">
-          When you receive your journal, the app activates — built around your current phase, prompt, and M.I.R.R.O.R. letter. Built for consistency.
-        </p>
-      </div>
-
-      <div class="app-features reveal">
-        <div class="app-feat">
-          <span class="app-feat-label">MOOD MAP</span>
-          <p class="app-feat-desc">90 days of mood data visualised. See the emotional arc of your journey as a heat map — patterns you couldn't see day to day.</p>
-        </div>
-        <div class="app-feat">
-          <span class="app-feat-label">AI INSIGHTS</span>
-          <p class="app-feat-desc">Weekly reflections generated from your entries. Surface themes, name blind spots, and celebrate growth you might have missed.</p>
-        </div>
-        <div class="app-feat">
-          <span class="app-feat-label">ARCHIVE</span>
-          <p class="app-feat-desc">Every entry, searchable and chronological. Your 90-day story, always accessible.</p>
-        </div>
-        <div class="app-feat">
-          <span class="app-feat-label">COMMUNITY</span>
-          <p class="app-feat-desc">A private circle of people on the same journey. No public feed. Anonymous by default. Depth over volume.</p>
-        </div>
-        <div class="app-feat">
-          <span class="app-feat-label">PRIVACY FIRST</span>
-          <p class="app-feat-desc">Full control over your data. Manage your 90-day progress and secure your reflections — they belong to you.</p>
-        </div>
-      </div>
-
-      <div class="app-ctas reveal">
-        <a href="#waitlist" class="btn-light">Join Waitlist</a>
-      </div>
-
-      <div class="system-showcase-container reveal">
-        <div class="system-showcase-col left">
-          <img src="assets/journal_scan_page.jpg" alt="White Mirror physical journal scan" class="system-journal-img" loading="lazy" />
-        </div>
-        <div class="system-showcase-col right">
-          <div class="iphone-mockup">
-            <img src="assets/iphone_frame_silver.png" alt="iPhone frame" class="iphone-frame-img" />
-            <div class="iphone-screen">
-              <img src="assets/app_ui_reflection.jpg" alt="White Mirror companion app UI" class="iphone-ui" loading="lazy" />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="app-made-caption reveal">Made to understand you.</p>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ METHOD ═══════════════════════════════════════ -->
+  <!-- METHOD -->
   <section class="section method-section" id="method">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">THE METHOD</span>
-        <h2 class="section-title">The M.I.R.R.O.R. method.</h2>
-        <p class="section-body">Six steps. One practice. Every prompt in this journal — and every screen in the app — follows this arc.</p>
-      </div>
+      <p class="section-label">The Method</p>
+      <h2 class="section-title">The M.I.R.R.O.R. Framework.</h2>
+      <p class="section-sub">Six dimensions of self-inquiry. Woven into every day of your 90.</p>
 
-      <div class="mirror-grid" id="mirror-grid">
-        <div class="mirror-card reveal" style="--i:0">
+      <div class="mirror-grid">
+        <div class="mirror-item">
           <div class="mirror-letter">M</div>
-          <div class="mirror-word">Moment</div>
-          <p class="mirror-desc">Ground yourself in the present. Before you reflect, you must arrive. Notice what's happening right now — in your body, your breath, this moment.</p>
+          <div class="mirror-word">Mindfulness</div>
+          <p class="mirror-desc">Present before the noise begins. Every session starts here.</p>
         </div>
-        <div class="mirror-card reveal" style="--i:1">
+        <div class="mirror-item">
           <div class="mirror-letter">I</div>
-          <div class="mirror-word">Identify</div>
-          <p class="mirror-desc">Name what you feel without judgment. Clarity begins with honest recognition. What emotion is present? What thought keeps returning?</p>
+          <div class="mirror-word">Inquiry</div>
+          <p class="mirror-desc">The questions that make you stop. Those are the only ones that count.</p>
         </div>
-        <div class="mirror-card reveal" style="--i:2">
+        <div class="mirror-item">
           <div class="mirror-letter">R</div>
-          <div class="mirror-word">Reflect</div>
-          <p class="mirror-desc">Go deeper than the surface. Ask why. Trace the feeling to its root. Your journal prompt lives here — in this honest, unguarded space.</p>
+          <div class="mirror-word">Reflection</div>
+          <p class="mirror-desc">Looking back without flinching. Patterns only emerge when you look.</p>
         </div>
-        <div class="mirror-card reveal" style="--i:3">
+        <div class="mirror-item">
           <div class="mirror-letter">R</div>
-          <div class="mirror-word">Reframe</div>
-          <p class="mirror-desc">Choose a different lens. Not toxic positivity — genuine perspective. What else could be true? What does this teach you?</p>
+          <div class="mirror-word">Responsibility</div>
+          <p class="mirror-desc">Own your choices. No exceptions, no audience, no excuses.</p>
         </div>
-        <div class="mirror-card reveal" style="--i:4">
+        <div class="mirror-item">
           <div class="mirror-letter">O</div>
-          <div class="mirror-word">Observe</div>
-          <p class="mirror-desc">Step back and witness your pattern. Over 90 days, you'll notice themes. Your mood map and AI insights help you see the shape of your growth.</p>
+          <div class="mirror-word">Openness</div>
+          <p class="mirror-desc">Honesty when honesty is the harder path. The practice only works if you do.</p>
         </div>
-        <div class="mirror-card reveal" style="--i:5">
+        <div class="mirror-item">
           <div class="mirror-letter">R</div>
-          <div class="mirror-word">Rise</div>
-          <p class="mirror-desc">Carry one intention forward. Not a resolution — a single, grounded step. Rise doesn't mean up. It means forward. Consistently.</p>
+          <div class="mirror-word">Renewal</div>
+          <p class="mirror-desc">End each day with intention. Not perfection — direction.</p>
         </div>
-      </div>
-
-      <div class="section-cta reveal">
-        <a href="#waitlist" class="btn-primary">Start your journey</a>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ VALUE PROPOSITION ═══════════════════════════════════════ -->
-  <section class="section value-section">
+  <div class="divider"></div>
+
+  <!-- 90 DAYS -->
+  <section class="section" id="phases">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow reveal">WHY IT WORKS</span>
-        <h2 class="section-title reveal">Clarity, not just reflection.</h2>
-        <p class="section-body reveal">Every emotional insight has a practical outcome. That's the difference.</p>
-      </div>
+      <p class="section-label">The 90 Days</p>
+      <h2 class="section-title">Three phases.<br />One transformation.</h2>
+      <p class="section-sub">Ninety days isn't arbitrary. It's how long real change actually takes.</p>
 
-      <div class="value-grid">
-        <div class="value-pair reveal" style="--i:0">
-          <div class="value-emotional">Understand what you feel</div>
-          <div class="value-divider" aria-hidden="true">→</div>
-          <div class="value-practical">Identify emotional patterns and stop repeating what drains you</div>
+      <div class="phases-grid">
+        <div class="phase-card">
+          <div class="phase-num">I</div>
+          <p class="phase-days-label">Days 1 – 30</p>
+          <h3 class="phase-title">The Reckoning</h3>
+          <p class="phase-desc">You look at what you've been avoiding. Not with judgment — with honesty. The story you've been telling yourself meets the truth.</p>
         </div>
-        <div class="value-pair reveal" style="--i:1">
-          <div class="value-emotional">Reconnect with yourself</div>
-          <div class="value-divider" aria-hidden="true">→</div>
-          <div class="value-practical">Build daily awareness that leads to better decisions</div>
+        <div class="phase-card">
+          <div class="phase-num">II</div>
+          <p class="phase-days-label">Days 31 – 60</p>
+          <h3 class="phase-title">The Work</h3>
+          <p class="phase-desc">Awareness without action is observation. This is where the patterns get named, and the repeating finally stops.</p>
         </div>
-        <div class="value-pair reveal" style="--i:2">
-          <div class="value-emotional">Find your clarity</div>
-          <div class="value-divider" aria-hidden="true">→</div>
-          <div class="value-practical">90 days of structured reflection builds lasting self-knowledge</div>
-        </div>
-        <div class="value-pair reveal" style="--i:3">
-          <div class="value-emotional">See yourself honestly</div>
-          <div class="value-divider" aria-hidden="true">→</div>
-          <div class="value-practical">The M.I.R.R.O.R. method removes the noise and shows what's real</div>
+        <div class="phase-card">
+          <div class="phase-num">III</div>
+          <p class="phase-days-label">Days 61 – 90</p>
+          <h3 class="phase-title">The Integration</h3>
+          <p class="phase-desc">Not a conclusion — a beginning. You define who you're becoming and build the practice you carry forward.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ PHASES ═══════════════════════════════════════ -->
-  <section class="section phases-section" id="phases">
+  <!-- CTA BAND -->
+  <section class="cta-band">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">90 DAYS</span>
-        <h2 class="section-title">Five phases. One arc.</h2>
-        <p class="section-body">The 90 days aren't random. They're structured as a deliberate journey — each phase building on the last.</p>
-      </div>
-
-      <div class="phases-timeline" id="phases-timeline">
-        <div class="phase-item reveal" style="--i:0" data-phase="1">
-          <div class="phase-connector">
-            <div class="phase-dot"></div>
-            <div class="phase-line"></div>
-          </div>
-          <div class="phase-body">
-            <div class="phase-meta">
-              <span class="phase-eyebrow">Phase 1 · Days 1–18</span>
-            </div>
-            <h3 class="phase-name">Awakening</h3>
-            <p class="phase-desc">The practice begins here. Before anything can change, you have to see where you actually are — clearly, without softening it. Day one is an arrival, not a transformation.</p>
-          </div>
-        </div>
-
-        <div class="phase-item reveal" style="--i:1" data-phase="2">
-          <div class="phase-connector">
-            <div class="phase-dot"></div>
-            <div class="phase-line"></div>
-          </div>
-          <div class="phase-body">
-            <div class="phase-meta">
-              <span class="phase-eyebrow">Phase 2 · Days 19–36</span>
-            </div>
-            <h3 class="phase-name">Excavation</h3>
-            <p class="phase-desc">You start digging. The prompts go deeper — into the stories you inherited, the defenses you built, the versions of yourself you perform without realising it.</p>
-          </div>
-        </div>
-
-        <div class="phase-item reveal" style="--i:2" data-phase="3">
-          <div class="phase-connector">
-            <div class="phase-dot"></div>
-            <div class="phase-line"></div>
-          </div>
-          <div class="phase-body">
-            <div class="phase-meta">
-              <span class="phase-eyebrow">Phase 3 · Days 37–54</span>
-            </div>
-            <h3 class="phase-name">The Turn</h3>
-            <p class="phase-desc">The hardest phase. Everything shifts here — not because circumstances change, but because you choose a different lens. Reframe days begin. Old stories get examined.</p>
-          </div>
-        </div>
-
-        <div class="phase-item reveal" style="--i:3" data-phase="4">
-          <div class="phase-connector">
-            <div class="phase-dot"></div>
-            <div class="phase-line"></div>
-          </div>
-          <div class="phase-body">
-            <div class="phase-meta">
-              <span class="phase-eyebrow">Phase 4 · Days 55–72</span>
-            </div>
-            <h3 class="phase-name">Pattern Work</h3>
-            <p class="phase-desc">You stop reacting and start watching. Patterns you couldn't see day to day become visible. Your mood map and AI insights start to show you the shape of your own mind.</p>
-          </div>
-        </div>
-
-        <div class="phase-item reveal" style="--i:4" data-phase="5">
-          <div class="phase-connector">
-            <div class="phase-dot"></div>
-          </div>
-          <div class="phase-body">
-            <div class="phase-meta">
-              <span class="phase-eyebrow">Phase 5 · Days 73–90</span>
-            </div>
-            <h3 class="phase-name">Rising</h3>
-            <p class="phase-desc">The practice becomes the life. You don't journal to feel better anymore — you journal because you know yourself now. Day 90 is not an ending. It's the first day you don't need to be told who you are.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="section-cta reveal">
-        <a href="#waitlist" class="btn-primary">Start your journey</a>
-      </div>
+      <p class="section-label" style="color: rgba(255,255,255,0.4);">Start Today</p>
+      <h2 class="section-title">Ninety days from now,<br /><em>you'll know yourself.</em></h2>
+      <p class="section-sub" style="color: rgba(255,255,255,0.5); margin-top: 1.25rem;">
+        The app is free to start. No journal required — though one helps.
+      </p>
+      <a href="https://app.whitemirrorjournal.com/signup" class="btn-primary" target="_blank" rel="noopener">Begin now</a>
+      <p class="cta-band-sub">Available on web · iOS · Android</p>
     </div>
   </section>
 
-
-  <!-- ═══════════════════════════════════════ QUOTE ═══════════════════════════════════════ -->
-  <section class="section quote-section">
-    <div class="container quote-container reveal">
-      <div class="quote-mark" aria-hidden="true">"</div>
-      <blockquote class="quote-text">
-        The white mirror doesn't show you who you wish you were.<br />
-        <em>It shows you who you actually are.</em>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ FINAL CTA ═══════════════════════════════════════ -->
-  <section class="section cta-section" id="waitlist">
-    <div class="container cta-container">
-      <div class="cta-card reveal">
-        <span class="eyebrow" style="color: var(--secondary)">EARLY ACCESS</span>
-        <h2 class="cta-title">This is where clarity begins.</h2>
-        <p class="cta-body">Start understanding yourself, one reflection at a time.</p>
-
-        <form id="waitlist-form" class="cta-form"
-          onsubmit="event.preventDefault(); document.getElementById('waitlist-form').classList.add('hidden'); document.getElementById('waitlist-success').classList.remove('hidden');">
-          <input type="email" id="waitlist-email" placeholder="Enter your email" required class="cta-email-input" />
-          <button type="submit" class="btn-light" id="waitlist-submit">Join Waitlist</button>
-        </form>
-        <p class="cta-microcopy">No spam. Only meaningful updates.</p>
-
-        <div id="waitlist-success" class="cta-success hidden">
-          <h3>You're on the list.</h3>
-          <p>Keep an eye on your inbox. We'll send you a private link when the first batch is ready for pre-order.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════ CONTACT ═══════════════════════════════════════ -->
-  <section class="section contact-section" id="contact">
+  <!-- CONTACT -->
+  <section class="section" id="contact">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow reveal">CONTACT</span>
-        <h2 class="section-title reveal">Get in touch.</h2>
-        <p class="section-body reveal">Have a question, partnership idea, or just want to say hello — we read every message.</p>
-      </div>
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">We're here.</h2>
 
-      <div class="contact-layout reveal">
-        <div class="contact-form-col">
-          <form class="contact-form" id="contact-form" onsubmit="handleContactSubmit(event)">
-            <div class="contact-row">
-              <div class="contact-field">
-                <label for="contact-name" class="contact-label">Full Name</label>
-                <input type="text" id="contact-name" name="name" placeholder="Your name" required class="contact-input" />
-              </div>
-              <div class="contact-field">
-                <label for="contact-email" class="contact-label">Email Address</label>
-                <input type="email" id="contact-email" name="email" placeholder="your@email.com" required class="contact-input" />
-              </div>
-            </div>
-            <div class="contact-field">
-              <label for="contact-phone" class="contact-label">Phone Number <span class="contact-optional">(optional)</span></label>
-              <input type="tel" id="contact-phone" name="phone" placeholder="+20 000 000 0000" class="contact-input" />
-            </div>
-            <div class="contact-field">
-              <label for="contact-message" class="contact-label">Message</label>
-              <textarea id="contact-message" name="message" placeholder="Tell us what's on your mind..." required class="contact-input contact-textarea"></textarea>
-            </div>
-            <button type="submit" class="btn-primary contact-submit">Send Message &rarr;</button>
-          </form>
-          <div id="contact-success" class="contact-success hidden">
-            <div class="contact-success-icon" aria-hidden="true">✦</div>
-            <h3>Message received.</h3>
-            <p>We read every message and will get back to you soon.</p>
-          </div>
+      <div class="contact-grid">
+        <div class="contact-block">
+          <div class="contact-block-label">General</div>
+          <h3 class="contact-block-title">Questions or feedback?</h3>
+          <p class="contact-block-desc">We read everything. Usually back within two business days.</p>
+          <a href="mailto:hello@whitemirrorjournal.com" class="contact-link">hello@whitemirrorjournal.com</a>
         </div>
-
-        <div class="contact-info-col">
-          <div class="contact-info-card">
-            <div class="contact-info-block">
-              <span class="contact-info-label">COMPANY</span>
-              <span class="contact-info-value">White Mirror Journal</span>
-            </div>
-            <div class="contact-info-sep" aria-hidden="true"></div>
-            <div class="contact-info-block">
-              <span class="contact-info-label">EMAIL</span>
-              <a href="mailto:hello@whitemirrorjournal.com" class="contact-info-value contact-info-link">hello@whitemirrorjournal.com</a>
-            </div>
-            <div class="contact-info-sep" aria-hidden="true"></div>
-            <div class="contact-info-block">
-              <span class="contact-info-label">ADDRESS</span>
-              <span class="contact-info-value">128 Degla Gardens<br />October Gardens, Giza, Egypt</span>
-            </div>
-          </div>
+        <div class="contact-block">
+          <div class="contact-block-label">Support</div>
+          <h3 class="contact-block-title">Account or app issue?</h3>
+          <p class="contact-block-desc">Billing, access, or anything broken — reach out directly.</p>
+          <a href="mailto:support@whitemirrorjournal.com" class="contact-link">support@whitemirrorjournal.com</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-inner">
       <div class="footer-brand">
@@ -587,39 +241,30 @@
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <span class="footer-col-label">PRACTICE</span>
-          <a href="#how" class="footer-link">How it Works</a>
-          <a href="#method" class="footer-link">The M.I.R.R.O.R. Method</a>
-          <a href="#phases" class="footer-link">The 90 Days</a>
-          <a href="#journal" class="footer-link">The Journal</a>
-          <a href="#contact" class="footer-link">Contact Us</a>
+          <span class="footer-col-label">Practice</span>
+          <a href="#method"   class="footer-link">The M.I.R.R.O.R. Method</a>
+          <a href="#phases"   class="footer-link">The 90 Days</a>
+          <a href="#features" class="footer-link">The App</a>
+          <a href="#contact"  class="footer-link">Contact</a>
         </div>
         <div class="footer-col">
-          <span class="footer-col-label">APP</span>
-          <a href="https://app.whitemirrorjournal.com" class="footer-link" target="_blank" rel="noopener">Open the App</a>
-          <a href="https://app.whitemirrorjournal.com/signup" class="footer-link" target="_blank" rel="noopener">Sign Up</a>
-          <a href="https://app.whitemirrorjournal.com/login" class="footer-link" target="_blank" rel="noopener">Log In</a>
+          <span class="footer-col-label">App</span>
+          <a href="https://app.whitemirrorjournal.com"         class="footer-link" target="_blank" rel="noopener">Open the App</a>
+          <a href="https://app.whitemirrorjournal.com/signup"  class="footer-link" target="_blank" rel="noopener">Sign Up</a>
+          <a href="https://app.whitemirrorjournal.com/login"   class="footer-link" target="_blank" rel="noopener">Log In</a>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span class="footer-copy">© 2026 White Mirror. All rights reserved.</span>
+      <span class="footer-copy">Copyright © 2026 White Mirror. All rights reserved.</span>
       <div class="footer-bottom-links">
-        <a href="privacy.html" class="footer-legal-link">Privacy</a>
-        <a href="terms.html" class="footer-legal-link">Terms</a>
+        <a href="privacy.html" class="footer-legal-link">Privacy Policy</a>
+        <a href="terms.html"   class="footer-legal-link">Terms of Use</a>
       </div>
     </div>
   </footer>
 
-  <script src="//code.tidio.co/r7c10ab8h4cnokqgjdqk6pazcd6jlldw.js" async></script>
   <script src="main.js"></script>
-  <script>
-    function handleContactSubmit(e) {
-      e.preventDefault();
-      document.getElementById('contact-form').classList.add('hidden');
-      document.getElementById('contact-success').classList.remove('hidden');
-    }
-  </script>
-</body>
 
+</body>
 </html>
