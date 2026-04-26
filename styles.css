@@ -246,6 +246,17 @@ body {
   flex-wrap: wrap;
 }
 
+.hero-notice {
+  margin-top: 1.5rem;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--tertiary);
+  line-height: 1.6;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn-primary {
   display: inline-block;
   font-family: var(--font-body);
@@ -450,7 +461,7 @@ body {
    ═══════════════════════════════════════════════════════ */
 .phases-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 2px;
   background: var(--border);
   border-radius: var(--radius-lg);
@@ -696,6 +707,7 @@ body {
 @media (max-width: 1024px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .mirror-grid   { grid-template-columns: repeat(3, 1fr); }
+  .phases-grid   { grid-template-columns: repeat(3, 1fr); }
   .contact-grid  { grid-template-columns: 1fr 1fr; }
 }
 
