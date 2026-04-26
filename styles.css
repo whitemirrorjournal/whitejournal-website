@@ -17,8 +17,11 @@
   --bg:         #ffffff;
   --bg-warm:    #fafaf8;
 
-  --font-display: 'Lora', Georgia, serif;
-  --font-body:    'Inter', -apple-system, system-ui, sans-serif;
+  --font-display:    'Lora', Georgia, serif;
+  --font-body:       'Inter', -apple-system, system-ui, sans-serif;
+  --font-lora:       'Lora', Georgia, serif;
+  --font-cormorant:  'Cormorant Garamond', Georgia, serif;
+  --font-dm:         'DM Sans', -apple-system, system-ui, sans-serif;
 
   --nav-height: 44px;
   --container:  980px;
@@ -532,7 +535,7 @@ body {
    ═══════════════════════════════════════════════════════ */
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
   background: var(--border);
   border-radius: var(--radius-lg);
@@ -692,6 +695,7 @@ body {
 @media (max-width: 1024px) {
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .mirror-grid   { grid-template-columns: repeat(3, 1fr); }
+  .contact-grid  { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 768px) {
