@@ -222,6 +222,42 @@
     </div>
   </section>
 
+  <!-- WAITLIST -->
+  <section class="section waitlist-section" id="waitlist">
+    <div class="container">
+      <div class="waitlist-card">
+        <div class="waitlist-header">
+          <p class="section-label">Early Access</p>
+          <h2 class="section-title">Join the Waitlist.</h2>
+          <p class="section-sub">The journal is in production. Be among the first to receive it when it ships.</p>
+        </div>
+        <form class="waitlist-form" id="waitlist-form">
+          <div class="waitlist-row">
+            <div class="waitlist-field">
+              <label for="wl-name" class="waitlist-label">Full Name</label>
+              <input type="text" id="wl-name" name="name" placeholder="Your name" required class="waitlist-input" />
+            </div>
+            <div class="waitlist-field">
+              <label for="wl-email" class="waitlist-label">Email Address</label>
+              <input type="email" id="wl-email" name="email" placeholder="your@email.com" required class="waitlist-input" />
+            </div>
+          </div>
+          <div class="waitlist-field">
+            <label for="wl-phone" class="waitlist-label">Phone Number <span class="waitlist-optional">(optional)</span></label>
+            <input type="tel" id="wl-phone" name="phone" placeholder="+20 000 000 0000" class="waitlist-input" />
+          </div>
+          <button type="submit" class="btn-primary waitlist-submit" id="waitlist-submit">Submit Wishlist</button>
+          <p class="waitlist-notice">No spam. Only meaningful updates about your journal.</p>
+        </form>
+        <div class="waitlist-success hidden" id="waitlist-success">
+          <div class="waitlist-success-icon">✦</div>
+          <h3>You're on the list.</h3>
+          <p>We'll reach out as soon as your journal is ready to ship.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT -->
   <section class="section" id="contact">
     <div class="container">
@@ -282,6 +318,41 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    document.getElementById('waitlist-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = document.getElementById('waitlist-submit');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const body = {
+        name:  document.getElementById('wl-name').value.trim(),
+        email: document.getElementById('wl-email').value.trim(),
+        phone: document.getElementById('wl-phone').value.trim(),
+      };
+
+      try {
+        const res = await fetch('/api/waitlist', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        });
+
+        if (res.ok) {
+          document.getElementById('waitlist-form').classList.add('hidden');
+          document.getElementById('waitlist-success').classList.remove('hidden');
+        } else {
+          btn.textContent = 'Submit Wishlist';
+          btn.disabled = false;
+          alert('Something went wrong. Please email us at hello@whitemirrorjournal.com');
+        }
+      } catch (err) {
+        btn.textContent = 'Submit Wishlist';
+        btn.disabled = false;
+        alert('Something went wrong. Please email us at hello@whitemirrorjournal.com');
+      }
+    });
+  </script>
 
 </body>
 </html>

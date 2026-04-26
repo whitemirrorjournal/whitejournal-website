@@ -543,6 +543,113 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════
+   WAITLIST
+   ═══════════════════════════════════════════════════════ */
+.waitlist-card {
+  background: var(--bg-warm);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 3.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.waitlist-header {
+  margin-bottom: 2.5rem;
+}
+
+.waitlist-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.waitlist-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.waitlist-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.waitlist-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--tertiary);
+}
+
+.waitlist-optional {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--quaternary);
+}
+
+.waitlist-input {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--border-mid);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+.waitlist-input:focus {
+  border-color: var(--secondary);
+}
+
+.waitlist-input::placeholder {
+  color: var(--quaternary);
+}
+
+.waitlist-submit {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+}
+
+.waitlist-notice {
+  font-size: 12px;
+  color: var(--quaternary);
+  margin-top: -0.25rem;
+}
+
+.waitlist-success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.waitlist-success-icon {
+  font-size: 1.5rem;
+  color: var(--tertiary);
+  margin-bottom: 1rem;
+}
+
+.waitlist-success h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.waitlist-success p {
+  font-size: 14px;
+  color: var(--secondary);
+}
+
+.hidden { display: none !important; }
+
+/* ═══════════════════════════════════════════════════════
    CONTACT
    ═══════════════════════════════════════════════════════ */
 .contact-grid {
@@ -719,10 +826,13 @@ body {
 
   .section { padding: 5rem 0; }
 
-  .features-grid { grid-template-columns: 1fr; }
-  .mirror-grid   { grid-template-columns: repeat(2, 1fr); }
-  .phases-grid   { grid-template-columns: 1fr; }
-  .contact-grid  { grid-template-columns: 1fr; }
+  .features-grid  { grid-template-columns: 1fr; }
+  .mirror-grid    { grid-template-columns: repeat(2, 1fr); }
+  .phases-grid    { grid-template-columns: 1fr; }
+  .contact-grid   { grid-template-columns: 1fr; }
+  .waitlist-row   { grid-template-columns: 1fr; }
+  .waitlist-card  { padding: 2rem 1.5rem; }
+  .waitlist-submit { align-self: stretch; text-align: center; }
 
   .footer-inner  { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
