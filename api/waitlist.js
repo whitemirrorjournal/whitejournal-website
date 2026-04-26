@@ -1,8 +1,8 @@
-import { Resend } from 'resend';
+const { Resend } = require('resend');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
@@ -20,7 +20,7 @@ export default async function handler(req, res) {
 
   try {
     const { error } = await resend.emails.send({
-      from: 'White Mirror <onboarding@resend.dev>',
+      from: 'White Mirror <noreply@whitemirrorjournal.com>',
       to: ['hello@whitemirrorjournal.com'],
       reply_to: email,
       subject: `New Waitlist Submission — ${name}`,
@@ -34,7 +34,7 @@ export default async function handler(req, res) {
             </tr>
             <tr>
               <td style="padding: 12px 0; border-bottom: 1px solid #e8e6e1; font-size: 13px; color: #86868b;">Email</td>
-              <td style="padding: 12px 0; border-bottom: 1px solid #e8e6e1; font-size: 14px;"><a href="mailto:${email}" style="color: #0071e3;">${email}</a></td>
+              <td style="padding: 12px 0; border-bottom: 1px solid #e8e6e1; font-size: 14px;"><a href="mailto:${email}" style="color: #0a0a0a;">${email}</a></td>
             </tr>
             ${phone ? `
             <tr>
@@ -57,4 +57,4 @@ export default async function handler(req, res) {
     console.error('Waitlist error:', err);
     return res.status(500).json({ error: 'Server error' });
   }
-}
+};
